@@ -15,9 +15,9 @@
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <0>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
 
@@ -70,45 +70,45 @@
 
         default_layer {
             bindings = <
-                &none  &none  &none         &none        &none                                                                                            &none       &none         &none         &none          &none
-                &none  &none  &none         &none        &none       &none                                                                         &none  &none       &none         &none         &none          &none
-                &none  &kp Q  &kp W         &kp F        &kp P       &kp B                                                                         &kp J  &kp L       &kp U         &kp Y         &kp SEMICOLON  &none
-                &none  &kp A  &hm LSHIFT R  &hm LCTRL S  &hm LGUI T  &kp G                                                                         &kp M  &hm RGUI N  &hm RCTRL E   &hm RSHIFT I  &kp O          &none
-                &none  &kp Z  &kp X         &kp C        &kp D       &kp V  &none        &none      &none       &none        &none    &none        &kp K  &kp H       &kp KP_COMMA  &kp KP_DOT    &kp KP_DIVIDE  &none
-                &none  &none  &none         &none        &none              &mo_tog 1 1  &kp SPACE  &kp BSPC    &key_repeat  &kp RET  &mo_tog 2 1         &none       &none         &none         &none          &none
+&none  &none  &none         &none        &none                                                                                            &none       &none         &none         &none          &none
+&none  &none  &none         &none        &none       &none                                                                         &none  &none       &none         &none         &none          &none
+&none  &kp Q  &kp W         &kp F        &kp P       &kp B                                                                         &kp J  &kp L       &kp U         &kp Y         &kp SEMICOLON  &none
+&none  &kp A  &hm LSHIFT R  &hm LCTRL S  &hm LCMD T  &kp G                                                                         &kp M  &hm RCMD N  &hm RCTRL E   &hm RSHIFT I  &kp O          &none
+&none  &kp Z  &kp X         &kp C        &kp D       &kp V  &none        &none      &none       &none        &none    &none        &kp K  &kp H       &kp KP_COMMA  &kp KP_DOT    &kp KP_DIVIDE  &none
+&none  &none  &none         &none        &none              &mo_tog 1 1  &kp SPACE  &kp BSPC    &key_repeat  &kp RET  &mo_tog 2 2         &none       &none         &none         &none          &none
             >;
         };
 
         Symbol_layer {
             bindings = <
-                &none  &none            &none             &none              &none                                                                                                          &none       &none     &none     &none      &none
-                &none  &none            &none             &none              &none          &none                                                                            &none          &none       &none     &none     &none      &none
-                &none  &kp CARET        &kp UNDERSCORE    &kp MINUS          &kp BACKSLASH  &kp PLUS                                                                         &kp AMPERSAND  &kp HASH    &kp LBKT  &kp RBKT  &kp PRCNT  &none
-                &none  &kp EXCLAMATION  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp GRAVE      &kp EQUAL                                                                        &kp PIPE       &kp COLON   &kp LPAR  &kp RPAR  &kp QMARK  &none
-                &none  &kp DOT          &kp LESS_THAN     &kp GREATER_THAN   &kp SLASH      &kp ASTERISK  &none        &none      &none       &none    &none    &none        &kp TILDE      &kp DOLLAR  &kp LBRC  &kp RBRC  &kp AT     &none
-                &none  &none            &none             &none              &none                        &mo_tog 1 1  &kp SPACE  &kp BSPC    &kp DEL  &kp RET  &mo_tog 2 2                 &none       &none     &none     &none      &none
+&none  &none            &none             &none              &none                                                                                                          &none       &none     &none     &none      &none
+&none  &none            &none             &none              &none          &none                                                                            &none          &none       &none     &none     &none      &none
+&none  &kp CARET        &kp UNDERSCORE    &kp MINUS          &kp BACKSLASH  &kp PLUS                                                                         &kp AMPERSAND  &kp HASH    &kp LBKT  &kp RBKT  &kp PRCNT  &none
+&none  &kp EXCLAMATION  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp GRAVE      &kp EQUAL                                                                        &kp PIPE       &kp COLON   &kp LPAR  &kp RPAR  &kp QMARK  &none
+&none  &kp DOT          &kp LESS_THAN     &kp GREATER_THAN   &kp SLASH      &kp ASTERISK  &none        &none      &none       &none    &none    &none        &kp TILDE      &kp DOLLAR  &kp LBRC  &kp RBRC  &kp AT     &none
+&none  &none            &none             &none              &none                        &mo_tog 1 1  &kp SPACE  &kp BSPC    &kp DEL  &kp RET  &mo_tog 2 2                 &none       &none     &none     &none      &none
             >;
         };
 
         number_layer {
             bindings = <
-                &none  &none  &none  &none  &none                                                                                             &none            &none            &none            &none      &none
-                &none  &none  &none  &none  &none  &none                                                                     &none            &none            &none            &none            &none      &none
-                &none  &none  &none  &none  &none  &none                                                                     &kp ASTERISK     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS  &none
-                &none  &none  &none  &none  &none  &none                                                                     &kp SLASH        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS   &none
-                &none  &none  &none  &none  &none  &none  &none        &none      &none       &none    &none    &none        &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL  &none
-                &none  &none  &none  &none  &none         &mo_tog 1 1  &kp SPACE  &kp BSPC    &kp DEL  &kp RET  &mo_tog 2 2                   &none            &none            &none            &none      &none
+&none  &none  &none  &none  &none                                                                                             &none            &none            &none            &none      &none
+&none  &none  &none  &none  &none  &none                                                                     &none            &none            &none            &none            &none      &none
+&none  &none  &none  &none  &none  &none                                                                     &kp ASTERISK     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS  &none
+&none  &none  &none  &none  &none  &none                                                                     &kp SLASH        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS   &none
+&none  &none  &none  &none  &none  &none  &none        &none      &none       &none    &none    &none        &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL  &none
+&none  &none  &none  &none  &none         &mo_tog 1 1  &kp SPACE  &kp BSPC    &kp DEL  &kp RET  &mo_tog 2 2                   &none            &none            &none            &none      &none
             >;
         };
 
         config_layer {
             bindings = <
-                &none  &none        &none            &none            &none                                                                                                                              &none  &none  &none  &none        &none
-                &none  &none        &none            &none            &none            &none                                                                                               &none         &none  &none  &none  &none        &none
-                &none  &bootloader  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_SPI  &rgb_ug RGB_COLOR_HSB(0,0,100)                                                                      &none         &none  &none  &none  &bootloader  &none
-                &none  &none        &rgb_ug RGB_ON   &rgb_ug RGB_TOG  &rgb_ug RGB_OFF  &rgb_ug RGB_COLOR_HSB(31,97,50)                                                                     &out OUT_USB  &bt_0  &bt_1  &bt_2  &bt_3        &none
-                &none  &sys_reset   &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_SPD  &rgb_ug RGB_COLOR_HSB(0,100,50)  &none        &none      &none       &none    &none    &none        &none         &none  &none  &none  &sys_reset   &none
-                &none  &none        &none            &none            &none                                             &mo_tog 1 1  &kp SPACE  &kp BSPC    &kp DEL  &kp RET  &mo_tog 2 2                &none  &none  &none  &none        &none
+&none  &none        &none            &none            &none                                                                                                                              &none  &none  &none  &none        &none
+&none  &none        &none            &none            &none            &none                                                                                               &none         &none  &none  &none  &none        &none
+&none  &bootloader  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_SPI  &rgb_ug RGB_COLOR_HSB(0,0,100)                                                                      &none         &none  &none  &none  &bootloader  &none
+&none  &none        &rgb_ug RGB_ON   &rgb_ug RGB_TOG  &rgb_ug RGB_OFF  &rgb_ug RGB_COLOR_HSB(31,97,50)                                                                     &out OUT_USB  &bt_0  &bt_1  &bt_2  &bt_3        &none
+&none  &sys_reset   &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_SPD  &rgb_ug RGB_COLOR_HSB(0,100,50)  &none        &none      &none       &none    &none    &none        &none         &none  &none  &none  &sys_reset   &none
+&none  &none        &none            &none            &none                                             &mo_tog 1 1  &kp SPACE  &kp BSPC    &kp DEL  &kp RET  &mo_tog 2 2                &none  &none  &none  &none        &none
             >;
         };
     };
