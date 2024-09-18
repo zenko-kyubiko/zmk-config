@@ -112,12 +112,12 @@
 
         config_layer {
             bindings = <
-                &none  &none                           &none            &none            &none                                                                                                                              &none  &none  &none  &none  &none
-                &none  &none                           &none            &none            &none            &none                                                                                               &none         &none  &none  &none  &none  &none
-                &none  &rgb_ug RGB_BRI                 &rgb_ug RGB_SAI  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SPI                                                                                     &none         &none  &none  &none  &none  &none
-                &none  &rgb_ug RGB_COLOR_HSB(0,0,100)  &rgb_ug RGB_ON   &rgb_ug RGB_TOG  &rgb_ug RGB_OFF  &rgb_ug RGB_COLOR_HSB(31,97,50)                                                                     &out OUT_USB  &bt_0  &bt_1  &bt_2  &bt_3  &none
-                &none  &rgb_ug RGB_SAD                 &rgb_ug RGB_SAD  &rgb_ug RGB_EFR  &rgb_ug RGB_HUD  &rgb_ug RGB_SPD                  &none        &none      &none       &none    &none    &none        &none         &none  &none  &none  &none  &none
-                &none  &none                           &none            &none            &none                                             &mo_tog 1 1  &kp SPACE  &kp BSPC    &kp DEL  &kp RET  &mo_tog 2 2                &none  &none  &none  &none  &none
+                &none  &none        &none            &none            &none                                                                                                                              &none  &none  &none  &none        &none
+                &none  &none        &none            &none            &none            &none                                                                                               &none         &none  &none  &none  &none        &none
+                &none  &bootloader  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_SPI  &rgb_ug RGB_COLOR_HSB(0,0,100)                                                                      &none         &none  &none  &none  &bootloader  &none
+                &none  &none        &rgb_ug RGB_ON   &rgb_ug RGB_TOG  &rgb_ug RGB_OFF  &rgb_ug RGB_COLOR_HSB(31,97,50)                                                                     &out OUT_USB  &bt_0  &bt_1  &bt_2  &bt_3        &none
+                &none  &sys_reset   &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_SPD  &rgb_ug RGB_COLOR_HSB(0,100,50)  &none        &none      &none       &none    &none    &none        &none         &none  &none  &none  &sys_reset   &none
+                &none  &none        &none            &none            &none                                             &mo_tog 1 1  &kp SPACE  &kp BSPC    &kp DEL  &kp RET  &mo_tog 2 2                &none  &none  &none  &none        &none
             >;
         };
     };
