@@ -12,22 +12,13 @@
 
 / {
     behaviors {
-        skq: sticky_key_quick_release {
-            compatible = "zmk,behavior-sticky-key";
-            #binding-cells = <1>;
-            bindings = <&kp>;
-            release-after-ms = <1000>;
-            quick-release;
-            ignore-modifiers;
-        };
-
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&skq>, <&kp>;
+            bindings = <&kp>, <&kp>;
         };
 
         mo_tog: behavior_mo_tog {
