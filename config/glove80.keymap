@@ -10,13 +10,15 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
-/ {
 
 &lt {  // layer-tap config
   flavor = "balanced";
   tapping-term-ms = <200>;
   quick-tap-ms = <175>;
 };
+
+
+/ {
     behaviors {
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
