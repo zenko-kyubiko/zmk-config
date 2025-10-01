@@ -52,11 +52,6 @@
 			key-positions = <LB3 LB2>;
 			layers = <DEF SYM NUM>;
 		};
-		combo_command {
-			bindings = <&skq LCMD>;
-			key-positions = <LH1 LH0>;
-			layers = <DEF SYM NUM>;
-		};
 		
 		// RIGHT HAND COMBO
 		combo_shift {
@@ -79,6 +74,11 @@
 		combo_caps_lock {
 			bindings = <&caps_word>;
 			key-positions = <LM0 RM0>;
+			layers = <DEF SYM NUM>;
+		};
+		combo_command {
+			bindings = <&skq LCMD>;
+			key-positions = <LH0 RH0>;
 			layers = <DEF SYM NUM>;
 		};
 	};
