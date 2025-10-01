@@ -84,7 +84,7 @@
 	};
 
 	conditional_layers {
-		compatible = "zmk,conditional_layers";
+		compatible = "zmk,conditional-layers";
 
 		tri_layer {
 			if-layers = <SYM NUM>;
