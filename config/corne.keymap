@@ -38,46 +38,46 @@
 		combo_tab {
 			bindings = <&kp TAB>;
 			key-positions = <LT3 LT2>;
-			layers = <DEF SYL NUM>;
+			layers = <DEF SYM NUM>;
 		};
 		combo_delete {
 			bindings = <&kp BSPC>;
 			key-positions = <LM3 LM2>;
-			layers = <DEF SYL NUM>;
+			layers = <DEF SYM NUM>;
 		};
 		combo_ctrl {
 			bindings = <&skq LCTRL>;
 			key-positions = <LB3 LB2>;
-			layers = <DEF SYL NUM>;
+			layers = <DEF SYM NUM>;
 		};
 		combo_command {
 			bindings = <&skq LCMD>;
 			key-positions = <LH1 LH0>;
-			layers = <DEF SYL NUM>;
+			layers = <DEF SYM NUM>;
 		};
 		
 		// RIGHT HAND COMBO
 		combo_shift {
 			bindings = <&skq LSHIFT>;
 			key-positions = <RT3 RT2>;
-			layers = <DEF SYL NUM>;
+			layers = <DEF SYM NUM>;
 		};
 		combo_escape {
 			bindings = <&kp ESC>;
 			key-positions = <RM3 RM2>;
-			layers = <DEF SYL NUM>;
+			layers = <DEF SYM NUM>;
 		};
 		combo_alt {
 			bindings = <&skq LALT>;
 			key-positions = <RB3 RB2>;
-			layers = <DEF SYL NUM>;
+			layers = <DEF SYM NUM>;
 		};
 
 		// BOTH HAND COMBO
 		combo_caps_lock {
 			bindings = <&caps_word>;
 			key-positions = <LM0 RM0>;
-			layers = <DEF SYL NUM>;
+			layers = <DEF SYM NUM>;
 		};
 	};
 
