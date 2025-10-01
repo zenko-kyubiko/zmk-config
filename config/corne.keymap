@@ -6,6 +6,7 @@
 #include <behaviors.dtsi>
 #include <zmk-helpers/key-labels/36.h> // Requires zmk-helpers module.
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
 
 
 // LAYER
@@ -195,7 +196,7 @@
 //├───┼───┬───┼───┼───┼───┤ ├───┼───┼───┼───┼───┼───┤
 //|   |   |F1 |F2 |F3 |F10| |   |   |   |   |   |   |
 //├───┼───┼───┼───┼───┼───┤ ├───┼───┼───┼───┼───┼───┤
-//|   |SYS|F7 |F8 |F9 |F12| |   |   | ' |   |   |   |
+//|   |SYS|F7 |F8 |F9 |F12| |   |   |   |   |   |   |
 //╰───┴───┴───┼───┼───┼───┤ ├───┼───┼───┼───┴───┴───╯
 //            |   |   |   | |   |   |   |
 //            ╰───┴───┴───╯ ╰───┴───┴───╯
