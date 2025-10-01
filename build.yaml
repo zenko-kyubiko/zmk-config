@@ -21,6 +21,6 @@ include:
   - board: glove80_lh
   - board: glove80_rh
   - board: nice_nano_v2
-    shield: "corne_left nice_view_dapater nice_view_gem"
+    shield: "corne_left nice_view_adapater nice_view_gem"
   - board: nice_nano_v2
-    shield: "corne_right nice_view_dapater nice_view_gem"
+    shield: "corne_right nice_view_adapater nice_view_gem"
