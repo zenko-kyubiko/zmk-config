@@ -35,6 +35,7 @@
     };
 
 	combos {
+        compatible = "zmk,combos";
 
 		// LEFT HAND COMBO
 		combo_tab {
