@@ -49,8 +49,8 @@
             layers = <0 1 2>;
         };
 
-        combo_ctrl {
-            bindings = <&skq LCTRL>;
+        combo_alt {
+            bindings = <&skq LALT>;
             key-positions = <26 27>;
             layers = <0 1 2>;
         };
@@ -69,8 +69,8 @@
             layers = <0 1 2>;
         };
 
-        combo_alt {
-            bindings = <&skq LALT>;
+        combo_ctrl {
+            bindings = <&skq LCTRL>;
             key-positions = <32 33>;
             layers = <0 1 2>;
         };
