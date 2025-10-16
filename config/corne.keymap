@@ -39,54 +39,54 @@
 
         combo_tab {
             bindings = <&kp TAB>;
-            key-positions = <2 3>;
-            layers = <0 1 2>;
+            key-positions = <LT3 LT2 2 3>;
+            layers = <DEF SYM NUM>;
         };
 
         combo_delete {
             bindings = <&kp BSPC>;
-            key-positions = <14 15>;
-            layers = <0 1 2>;
+            key-positions = <LM3 LM2 14 15>;
+            layers = <DEF SYM NUM>;
         };
 
         combo_ctrl {
             bindings = <&skq LCTRL>;
-            key-positions = <26 27>;
-            layers = <0 1 2>;
+            key-positions = <LB3 LB2 26 27>;
+            layers = <DEF SYM NUM>;
         };
 
         // RIGHT HAND COMBO
 
         combo_shift {
             bindings = <&skq LSHIFT>;
-            key-positions = <8 9>;
-            layers = <0 1 2>;
+            key-positions = <RT3 RT2 8 9>;
+            layers = <DEF SYM NUM>;
         };
 
         combo_escape {
             bindings = <&kp ESC>;
-            key-positions = <20 21>;
-            layers = <0 1 2>;
+            key-positions = <RM3 RM2 20 21>;
+            layers = <DEF SYM NUM>;
         };
 
         combo_alt {
             bindings = <&skq LALT>;
-            key-positions = <32 33>;
-            layers = <0 1 2>;
+            key-positions = <RB3 RB2 32 33>;
+            layers = <DEF SYM NUM>;
         };
 
         // BOTH HAND COMBO
 
         combo_caps_lock {
             bindings = <&caps_word>;
-            key-positions = <17 18>;
-            layers = <0 1 2>;
+            key-positions = <LM0 RM0 17 18>;
+            layers = <DEF SYM NUM>;
         };
 
         combo_command {
             bindings = <&skq LCMD>;
-            key-positions = <38 39>;
-            layers = <0 1 2>;
+            key-positions = <LH0 RH0 38 39>;
+            layers = <DEF SYM NUM>;
         };
     };
 
@@ -128,7 +128,7 @@
 &none  &kp EQUAL  &kp PRCNT  &kp COLON  &kp BSLH  &kp EXCL     &kp QMARK  &kp FSLH  &kp SEMI  &kp DOLLAR  &kp PLUS  &none
 &none  &kp LT     &kp LBKT   &kp LPAR   &kp LBRC  &kp STAR     &kp AMPS   &kp RBRC  &kp RPAR  &kp RBKT    &kp GT    &none
 &none  &trans     &kp CARET  &kp GRAVE  &kp SQT   &kp MINUS    &kp UNDER  &kp DQT   &kp HASH  &kp PIPE    &trans    &none
-                             &trans     &trans    &trans       &trans     &kp ESC   &trans
+                             &trans     &trans    &trans       &trans     &trans    &trans
             >;
         };
 
@@ -144,9 +144,9 @@
         number {
             bindings = <
 &none  &kp TILDE  &kp N4  &kp N5  &kp N6  &trans    &trans     &trans    &trans    &trans     &trans    &none
-&none  &kp DOT    &kp N1  &kp N2  &kp N3  &trans    &kp EQUAL  &kp FSLH  &kp STAR  &kp MINUS  &kp PLUS  &none
+&none  &kp DOT    &kp N1  &kp N2  &kp N3  &kp N0    &kp EQUAL  &kp FSLH  &kp STAR  &kp MINUS  &kp PLUS  &none
 &none  &trans     &kp N7  &kp N8  &kp N9  &trans    &trans     &trans    &trans    &trans     &trans    &none
-                          &trans  &kp N0  &trans    &trans     &trans    &trans
+                          &trans  &trans  &trans    &trans     &trans    &trans
             >;
         };
 
