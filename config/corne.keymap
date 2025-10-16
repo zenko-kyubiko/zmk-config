@@ -89,15 +89,6 @@
             layers = <0 1 2>;
         };
     };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        tri_layer {
-            if-layers = <3 1>;
-            then-layer = <2>;
-        };
-    };
 };
 
 //╭───┬───┬───┬───┬───┬───╮ ╭───┬───┬───┬───┬───┬───╮
@@ -137,7 +128,7 @@
 &none  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans     &trans     &trans     &none
 &none  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none
 &none  &trans  &trans  &trans  &trans  &trans    &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none
-                       &trans  &mo NAV &trans    &trans  &trans    &trans
+                       &trans  &trans  &trans    &trans  &trans    &trans
             >;
         };
 
@@ -146,7 +137,7 @@
 &none  &kp TILDE  &kp N4  &kp N5  &kp N6  &trans    &trans     &trans    &trans    &trans     &trans    &none
 &none  &kp DOT    &kp N1  &kp N2  &kp N3  &kp N0    &kp EQUAL  &kp FSLH  &kp STAR  &kp MINUS  &kp PLUS  &none
 &none  &trans     &kp N7  &kp N8  &kp N9  &trans    &trans     &trans    &trans    &trans     &trans    &none
-                          &trans  &trans  &trans    &trans     &trans    &trans
+                          &trans  &mo NAV &trans    &trans     &trans    &trans
             >;
         };
 
