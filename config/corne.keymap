@@ -39,54 +39,54 @@
 
         combo_tab {
             bindings = <&kp TAB>;
-            key-positions = <LT3 LT2 2 3>;
-            layers = <DEF SYM NUM>;
+            key-positions = <2 3>;
+            layers = <0 1 2>;
         };
 
         combo_delete {
             bindings = <&kp BSPC>;
-            key-positions = <LM3 LM2 14 15>;
-            layers = <DEF SYM NUM>;
+            key-positions = <14 15>;
+            layers = <0 1 2>;
         };
 
         combo_ctrl {
             bindings = <&skq LCTRL>;
-            key-positions = <LB3 LB2 26 27>;
-            layers = <DEF SYM NUM>;
+            key-positions = <26 27>;
+            layers = <0 1 2>;
         };
 
         // RIGHT HAND COMBO
 
         combo_shift {
             bindings = <&skq LSHIFT>;
-            key-positions = <RT3 RT2 8 9>;
-            layers = <DEF SYM NUM>;
+            key-positions = <8 9>;
+            layers = <0 1 2>;
         };
 
         combo_escape {
             bindings = <&kp ESC>;
-            key-positions = <RM3 RM2 20 21>;
-            layers = <DEF SYM NUM>;
+            key-positions = <20 21>;
+            layers = <0 1 2>;
         };
 
         combo_alt {
             bindings = <&skq LALT>;
-            key-positions = <RB3 RB2 32 33>;
-            layers = <DEF SYM NUM>;
+            key-positions = <32 33>;
+            layers = <0 1 2>;
         };
 
         // BOTH HAND COMBO
 
         combo_caps_lock {
             bindings = <&caps_word>;
-            key-positions = <LM0 RM0 17 18>;
-            layers = <DEF SYM NUM>;
+            key-positions = <17 18>;
+            layers = <0 1 2>;
         };
 
         combo_command {
             bindings = <&skq LCMD>;
-            key-positions = <LH0 RH0 38 39>;
-            layers = <DEF SYM NUM>;
+            key-positions = <38 39>;
+            layers = <0 1 2>;
         };
     };
 
@@ -128,7 +128,7 @@
 &none  &kp EQUAL  &kp PRCNT  &kp COLON  &kp BSLH  &kp EXCL     &kp QMARK  &kp FSLH  &kp SEMI  &kp DOLLAR  &kp PLUS  &none
 &none  &kp LT     &kp LBKT   &kp LPAR   &kp LBRC  &kp STAR     &kp AMPS   &kp RBRC  &kp RPAR  &kp RBKT    &kp GT    &none
 &none  &trans     &kp CARET  &kp GRAVE  &kp SQT   &kp MINUS    &kp UNDER  &kp DQT   &kp HASH  &kp PIPE    &trans    &none
-                             &trans     &trans    &trans       &trans     &trans    &trans
+                             &trans     &trans    &trans       &trans     &mo NAV   &trans
             >;
         };
 
@@ -137,7 +137,7 @@
 &none  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans     &trans     &trans     &none
 &none  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none
 &none  &trans  &trans  &trans  &trans  &trans    &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none
-                       &trans  &trans  &trans    &trans  &trans    &trans
+                       &trans  &mo NAV &trans    &trans  &trans    &trans
             >;
         };
 
