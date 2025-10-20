@@ -9,7 +9,7 @@
         combos_backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <15 14>;
-            layers = <0>;
+            layers = <0, 2, 3, 4>;
         };
 
         combos_caps_lock {
