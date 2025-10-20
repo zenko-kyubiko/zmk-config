@@ -12,12 +12,6 @@
             layers = <0, 2, 3, 4>;
         };
 
-        combos_caps_lock {
-            bindings = <&caps_word>;
-            key-positions = <17 18>;
-            layers = <0>;
-        };
-
         combos_escape {
             bindings = <&kp ESCAPE>;
             key-positions = <20 21>;
@@ -26,12 +20,12 @@
 
         combos_under {
             bindings = <&kp UNDERSCORE>;
-            key-positions = <16 19>;
+            key-positions = <13 22>;
             layers = <0>;
         };
 
         combos_shift {
-            bindings = <&sk LEFT_SHIFT>;
+            bindings = <&shift_caps>;
             key-positions = <15 20>;
             layers = <0>;
         };
@@ -54,8 +48,13 @@
 
         combos_return {
             bindings = <&kp RETURN>;
-            key-positions = <2 3>;
+            key-positions = <17 18>;
             layers = <0 3 4>;
+        };
+
+        combos_semicolon {
+            bindings = <&kp SEMICOLON>;
+            key-positions = <16 19>;
         };
     };
 
@@ -143,6 +142,15 @@
             #binding-cells = <1>;
             toggle-mode = "off";
         };
+
+        shift_caps: shift_caps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SHIFT_CAPS";
+            #binding-cells = <0>;
+            bindings = <&sk LEFT_SHIFT>, <&caps_word>;
+
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -156,11 +164,11 @@
                      &none  &tog 2  &space_tab    &key_repeat  &sl 3  &none
             >;
 
-            label = "base_colemak-dh";
+            label = "colemak-dh";
         };
 
         base_gaming {
-            label = "base_gaming";
+            label = "gaming";
             bindings = <
 &none  &kp ESCAPE        &kp A  &kp W  &kp E         &kp R        &none  &none  &none  &none  &none  &none
 &none  &kp LEFT_SHIFT    &kp Q  &kp S  &kp D         &kp F        &none  &none  &none  &none  &none  &none
