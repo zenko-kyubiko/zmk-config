@@ -51,6 +51,12 @@
             bindings = <&to 1>;
             key-positions = <2 10>;
         };
+
+        combos_return {
+            bindings = <&kp RETURN>;
+            key-positions = <2 3>;
+            layers = <0 3 4>;
+        };
     };
 
     macros {
@@ -104,15 +110,6 @@
             tapping-term-ms = <200>;
         };
 
-        repeat_enter: repeat_enter {
-            compatible = "zmk,behavior-tap-dance";
-            label = "REPEAT_ENTER";
-            #binding-cells = <0>;
-            bindings = <&key_repeat>, <&kp ENTER>;
-
-            tapping-term-ms = <200>;
-        };
-
         minus_plus: minus_plus {
             compatible = "zmk,behavior-tap-dance";
             label = "MINUS_PLUS";
@@ -153,10 +150,10 @@
 
         base_colemak-dh {
             bindings = <
-&none  &kp Q  &kp W  &kp F  &kp P   &kp B         &kp J          &kp L   &kp U      &kp Y    &none  &none
-&none  &kp A  &kp R  &kp S  &kp T   &kp G         &kp M          &kp N   &kp E      &kp I    &kp O  &none
-&none  &kp Z  &kp X  &kp C  &kp D   &kp V         &kp K          &kp H   &kp COMMA  &kp DOT  &none  &none
-                     &none  &tog 2  &space_tab    &repeat_enter  &tog 3  &none
+&none  &kp Q  &kp W  &kp F  &kp P   &kp B         &kp J        &kp L  &kp U      &kp Y    &none  &none
+&none  &kp A  &kp R  &kp S  &kp T   &kp G         &kp M        &kp N  &kp E      &kp I    &kp O  &none
+&none  &kp Z  &kp X  &kp C  &kp D   &kp V         &kp K        &kp H  &kp COMMA  &kp DOT  &none  &none
+                     &none  &tog 2  &space_tab    &key_repeat  &sl 3  &none
             >;
 
             label = "base_colemak-dh";
