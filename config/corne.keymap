@@ -9,13 +9,13 @@
         combos_backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <15 14>;
-            layers = <0, 2, 3, 4>;
+            layers = <0 3 4>;
         };
 
         combos_escape {
             bindings = <&kp ESCAPE>;
             key-positions = <20 21>;
-            layers = <0>;
+            layers = <0 3 4>;
         };
 
         combos_under {
@@ -55,6 +55,7 @@
         combos_semicolon {
             bindings = <&kp SEMICOLON>;
             key-positions = <16 19>;
+            layers = <0>;
         };
     };
 
