@@ -1,171 +1,190 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
-#include <zmk-helpers/key-labels/36.h> // Requires zmk-helpers module.
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-// LAYER
-
-#define DEF 0
-#define SYM 1
-#define NUM 2
-#define NAV 3
-#define FN  4
-#define SYS 5
-
-&caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE>; };
-
 / {
-    behaviors {
-        skq: sticky_key_quick_release {
-            compatible = "zmk,behavior-sticky-key";
-            label = "STICKY_KEY_QUICK_RELEASE";
-            #binding-cells = <1>;
-            bindings = <&kp>;
-            release-after-ms = <1000>;
-            quick-release;
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
 
-        // LEFT HAND COMBO
-
-        combo_tab {
-            bindings = <&kp TAB>;
-            key-positions = <2 3>;
-            layers = <0 1 4>;
+        combos_backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <15 14>;
+            layers = <0>;
         };
 
-        combo_delete {
-            bindings = <&kp BSPC>;
-            key-positions = <14 15>;
-            layers = <0 1 4>;
-        };
-
-        combo_alt {
-            bindings = <&skq LALT>;
-            key-positions = <26 27>;
-            layers = <0 1 4>;
-        };
-
-        // RIGHT HAND COMBO
-
-        combo_shift {
-            bindings = <&skq LSHIFT>;
-            key-positions = <8 9>;
-            layers = <0 1 4>;
-        };
-
-        combo_escape {
-            bindings = <&kp ESC>;
-            key-positions = <20 21>;
-            layers = <0 1 4>;
-        };
-
-        combo_ctrl {
-            bindings = <&skq LCTRL>;
-            key-positions = <32 33>;
-            layers = <0 1 4>;
-        };
-
-        // BOTH HAND COMBO
-
-        combo_caps_lock {
+        combos_caps_lock {
             bindings = <&caps_word>;
             key-positions = <17 18>;
-            layers = <0 1 4>;
+            layers = <0>;
         };
 
-        combo_command {
-            bindings = <&skq LCMD>;
-            key-positions = <38 39>;
-            layers = <0 1 4>;
+        combos_escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <20 21>;
+            layers = <0>;
+        };
+
+        combos_under {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <16 19>;
+            layers = <0>;
+        };
+
+        combos_shift {
+            bindings = <&sk LEFT_SHIFT>;
+            key-positions = <15 20>;
+            layers = <0>;
+        };
+
+        combos_equal {
+            bindings = <&kp EQUAL>;
+            key-positions = <14 21>;
+            layers = <0>;
+        };
+
+        combos_to_layer_0 {
+            bindings = <&to 0>;
+            key-positions = <3 8>;
         };
     };
-};
 
-//╭───┬───┬───┬───┬───┬───╮ ╭───┬───┬───┬───┬───┬───╮
-//|LT5|LT4|LT3|LT2|LT1|LT0| |RT0|RT1|RT2|RT3|RT4|RT5|
-//├───┼───┬───┼───┼───┼───┤ ├───┼───┼───┼───┼───┼───┤
-//|LM5|LM4|LM3|LM2|LM1|LM0| |RM0|RM1|RM2|RM3|RM4|RM5|
-//├───┼───┼───┼───┼───┼───┤ ├───┼───┼───┼───┼───┼───┤
-//|LB5|LB4|LB3|LB2|LB1|LB0| |RB0|RB1|RB2|RB3|RB4|RB5|
-//╰───┴───┴───┼───┼───┼───┤ ├───┼───┼───┼───┴───┴───╯
-//            |LH2|LH1|LH0| |RH0|RH1|RH2|
-//            ╰───┴───┴───╯ ╰───┴───┴───╯
+    macros {
+        macro_less_than_equal: less_than_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LESS_THAN &kp EQUAL>;
+            label = "LESS_THAN_EQUAL";
+        };
 
-/ {
+        macro_greater_than_equal: more_than_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GREATER_THAN &kp EQUAL>;
+            label = "MORE_THAN_EQUAL";
+        };
+    };
+
+    behaviors {
+        less_than_equal: less_than_equal {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LESS_THAN_EQUAL";
+            #binding-cells = <0>;
+            bindings = <&kp LESS_THAN>, <&macro_less_than_equal>;
+
+            tapping-term-ms = <200>;
+        };
+
+        greater_than_equal: greater_than_equal {
+            compatible = "zmk,behavior-tap-dance";
+            label = "GREATER_THAN_EQUAL";
+            #binding-cells = <0>;
+            bindings = <&kp GREATER_THAN>, <&macro_greater_than_equal>;
+
+            tapping-term-ms = <200>;
+        };
+
+        space_tab: space_tab {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SPACE_TAB";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp TAB>;
+
+            tapping-term-ms = <200>;
+        };
+
+        repeat_enter: repeat_enter {
+            compatible = "zmk,behavior-tap-dance";
+            label = "REPEAT_ENTER";
+            #binding-cells = <0>;
+            bindings = <&key_repeat>, <&kp ENTER>;
+
+            tapping-term-ms = <200>;
+        };
+
+        minus_plus: minus_plus {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MINUS_PLUS";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp PLUS>;
+
+            tapping-term-ms = <200>;
+        };
+
+        divide_multiply: divide_multiply {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DIVIDE_MULTIPLY";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH>, <&kp ASTERISK>;
+
+            tapping-term-ms = <200>;
+        };
+
+        zero_equal: zero_equal {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ZERO_EQUAL";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_0>, <&kp EQUAL>;
+
+            tapping-term-ms = <200>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        base {
+        base_colemak-dh {
             bindings = <
-&none  &kp Q  &kp W  &kp F  &kp P  &kp B        &kp J    &kp L  &kp U      &kp Y    &none  &none
-&none  &kp A  &kp R  &kp S  &kp T  &kp G        &kp M    &kp N  &kp E      &kp I    &kp O  &none
-&none  &kp Z  &kp X  &kp C  &kp D  &kp V        &kp K    &kp H  &kp COMMA  &kp DOT  &mo 5  &none
-                     &none  &mo 1  &kp SPACE    &kp RET  &mo 2  &none
+&none  &kp Q  &kp W  &kp F  &kp P   &kp B         &kp J          &kp L   &kp U      &kp Y    &none  &none
+&none  &kp A  &kp R  &kp S  &kp T   &kp G         &kp M          &kp N   &kp E      &kp I    &kp O  &none
+&none  &kp Z  &kp X  &kp C  &kp D   &kp V         &kp K          &kp H   &kp COMMA  &kp DOT  &none  &none
+                     &none  &tog 1  &space_tab    &repeat_enter  &tog 2  &none
             >;
+
+            label = "base_colemak-dh";
+        };
+
+        navigation_shortcuts {
+            bindings = <
+&none  &kp LC(Z)     &kp LC(X)         &kp LC(C)       &kp LC(V)     &kp LC(S)    &kp ESCAPE  &kp HOME        &kp PAGE_DOWN      &kp PAGE_UP      &kp END             &none
+&none  &sk LEFT_ALT  &sk LEFT_CONTROL  &sk LEFT_SHIFT  &sk LEFT_GUI  &kp DEL      &kp BSPC    &kp LEFT_ARROW  &kp DOWN_ARROW     &kp UP_ARROW     &kp RIGHT_ARROW     &none
+&none  &none         &none             &none           &none         &none        &kp C_PP    &kp C_REWIND    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_FAST_FORWARD  &none
+                                       &none           &tog 0        &trans       &trans      &tog 3          &none
+            >;
+
+            label = "navigation_shortcuts";
         };
 
         symbol {
             bindings = <
-&none  &kp EQUAL  &kp PRCNT  &kp COLON  &kp BSLH  &kp EXCL     &kp QMARK  &kp FSLH  &kp SEMI  &kp DOLLAR  &kp PLUS  &none
-&none  &kp LT     &kp LBKT   &kp LPAR   &kp LBRC  &kp STAR     &kp AMPS   &kp RBRC  &kp RPAR  &kp RBKT    &kp GT    &none
-&none  &trans     &kp CARET  &kp GRAVE  &kp SQT   &kp MINUS    &kp UNDER  &kp DQT   &kp HASH  &kp PIPE    &trans    &none
-                             &trans     &trans    &trans       &trans     &mo 3     &trans
+&none  &kp AT_SIGN          &kp AMPERSAND    &kp PIPE              &kp COLON          &kp DOUBLE_QUOTES    &kp BACKSLASH  &kp QUESTION  &kp EXCLAMATION  &kp ASTERISK  &kp UNDERSCORE  &none
+&none  &less_than_equal     &kp LEFT_BRACE   &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET   &kp EQUAL            &kp SEMICOLON  &sk RGUI      &sk RSHFT        &sk RCTRL     &sk RALT        &none
+&none  &greater_than_equal  &kp RIGHT_BRACE  &kp RPAR              &kp RIGHT_BRACKET  &kp SINGLE_QUOTE     &kp SLASH      &kp HASH      &kp DOLLAR       &kp TILDE     &kp GRAVE       &none
+                                             &none                 &tog 3             &trans               &trans         &tog 0        &none
             >;
+
+            label = "symbol";
         };
 
         number {
             bindings = <
-&none  &kp TILDE  &kp N4  &kp N5  &kp N6  &trans    &trans     &trans    &trans    &trans     &trans    &none
-&none  &kp DOT    &kp N1  &kp N2  &kp N3  &kp N0    &kp EQUAL  &kp FSLH  &kp STAR  &kp MINUS  &kp PLUS  &none
-&none  &trans     &kp N7  &kp N8  &kp N9  &trans    &trans     &trans    &trans    &trans     &trans    &none
-                          &trans  &mo 3   &trans    &trans     &trans    &trans
+&none  &none  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &minus_plus         &kp F11  &kp F6  &kp F5  &kp F4  &none  &none
+&none  &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &zero_equal         &kp F10  &kp F3  &kp F2  &kp F1  &none  &none
+&none  &sl 4  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &divide_multiply    &kp F12  &kp F9  &kp F8  &kp F7  &sl 4  &none
+                            &none         &tog 0        &trans              &trans   &tog 0  &none
             >;
-        };
 
-        navigation {
-            bindings = <
-&none  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans     &trans     &trans     &none
-&none  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none
-&none  &trans  &trans  &trans  &trans  &trans    &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none
-                       &trans  &trans  &trans    &trans  &trans    &trans
-            >;
-        };
-
-        function {
-            bindings = <
-&none  &trans  &kp F4  &kp F5  &kp F6  &kp F11    &trans  &kp C_BRI_UP  &kp PSCRN   &kp C_BRI_DN  &trans  &none
-&none  &trans  &kp F1  &kp F2  &kp F3  &kp F10    &trans  &kp C_PREV    &kp C_PP    &kp C_NEXT    &trans  &none
-&none  &mo 5   &kp F7  &kp F8  &kp F9  &kp F12    &trans  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  &trans  &none
-                       &trans  &trans  &trans     &trans  &trans        &trans
-            >;
+            label = "number";
         };
 
         system {
             bindings = <
-&none  &trans  &trans        &trans        &trans        &bootloader    &bootloader  &trans        &trans        &trans        &trans  &none
-&none  &trans  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR     &bt BT_CLR   &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &trans  &none
-&none  &trans  &trans        &bt BT_SEL 0  &trans        &sys_reset     &sys_reset   &trans        &bt BT_SEL 0  &trans        &trans  &none
-                             &trans        &trans        &trans         &trans       &trans        &trans
+&none  &none  &bt BT_SEL 4  &none         &none         &bt BT_CLR      &bt BT_CLR    &none         &none         &bt BT_SEL 4  &none  &none
+&none  &none  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 0    &bt BT_SEL 0  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &none  &none
+&none  &none  &none         &none         &none         &sys_reset      &sys_reset    &none         &none         &none         &none  &none
+                            &none         &to 0         &trans          &trans        &to 0         &none
             >;
-        };
 
-        transparent {
-            bindings = <
-&none  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &none
-&none  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &none
-&none  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &none
-                       &trans  &trans  &trans    &trans  &trans  &trans
-            >;
+            label = "system";
         };
     };
 };
